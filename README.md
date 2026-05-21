@@ -16,6 +16,12 @@ This repository configures VM4 as the IDS monitoring VM.
 sudo bash setup.sh
 ```
 
+If the VM does not have a default route yet, pass the interface name explicitly:
+
+```bash
+sudo bash setup.sh enp0s3
+```
+
 ## Important virtual network setting
 
 For VM4 to see traffic between other VMs, enable one of the following:
@@ -28,6 +34,13 @@ For VM4 to see traffic between other VMs, enable one of the following:
 
 ```bash
 bash verify.sh
+```
+
+For Suricata startup problems, validate the config directly:
+
+```bash
+sudo suricata -T -c /etc/suricata/suricata.yaml
+sudo journalctl -xeu suricata.service
 ```
 
 ## Logs
