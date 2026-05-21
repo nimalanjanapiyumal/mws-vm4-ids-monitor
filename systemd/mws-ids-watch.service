@@ -1,0 +1,14 @@
+[Unit]
+Description=MWS Suricata IDS Log Watcher
+After=suricata.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/mws-ids/ids_log_watcher.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

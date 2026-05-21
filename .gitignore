@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs and evidence generated during runs
+*.log
+logs/
+evidence/runtime/
+
+# Local secrets created by user
+*.env
+!*.env.example
+credentials.env
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
