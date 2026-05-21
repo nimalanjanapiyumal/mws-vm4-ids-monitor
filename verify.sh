@@ -3,7 +3,7 @@ set -euo pipefail
 
 echo "[CHECK] Hostname and IP"
 hostnamectl --static
-ip -4 addr | grep -E '192\.168\.1\.40|inet ' || true
+ip -4 addr | grep -E '192\.168\.1\.74|inet ' || true
 
 echo "[CHECK] Suricata service"
 if systemctl is-active --quiet suricata; then

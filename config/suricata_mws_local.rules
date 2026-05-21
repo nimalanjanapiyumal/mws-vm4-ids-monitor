@@ -1,8 +1,8 @@
 # MWS Assessment 2 local IDS rules
 # SID range 2450001-2450999 reserved for this assessment lab.
 
-alert tcp any any -> 192.168.1.10 1883 (msg:"MWS MQTT connection attempt to broker"; flow:to_server; sid:2450001; rev:1;)
-alert tcp 192.168.1.50 any -> 192.168.1.10 1883 (msg:"MWS unauthorised lab VM MQTT connection attempt"; flow:to_server; sid:2450002; rev:1;)
-alert tcp any any -> 192.168.1.10 1883 (msg:"MWS MQTT telemetry topic observed"; flow:to_server,established; content:"mws/water/quality/sensor01/telemetry"; nocase; sid:2450003; rev:1;)
-alert tcp any any -> 192.168.1.10 1883 (msg:"MWS MQTT alert topic observed"; flow:to_server,established; content:"mws/water/quality/sensor01/alerts"; nocase; sid:2450004; rev:1;)
-alert tcp any any -> 192.168.1.10 1883 (msg:"MWS possible MQTT false-normal payload"; flow:to_server,established; content:"FALSE_NORMAL_SIMULATION"; nocase; sid:2450005; rev:1;)
+alert tcp any any -> 192.168.1.71 1883 (msg:"MWS MQTT connection attempt to broker"; flow:to_server; sid:2450001; rev:1;)
+alert tcp 192.168.1.75 any -> 192.168.1.71 1883 (msg:"MWS unauthorised lab VM MQTT connection attempt"; flow:to_server; sid:2450002; rev:1;)
+alert tcp any any -> 192.168.1.71 1883 (msg:"MWS MQTT telemetry topic observed"; flow:to_server,established; content:"mws/water/quality/sensor01/telemetry"; nocase; sid:2450003; rev:1;)
+alert tcp any any -> 192.168.1.71 1883 (msg:"MWS MQTT alert topic observed"; flow:to_server,established; content:"mws/water/quality/sensor01/alerts"; nocase; sid:2450004; rev:1;)
+alert tcp any any -> 192.168.1.71 1883 (msg:"MWS possible MQTT false-normal payload"; flow:to_server,established; content:"FALSE_NORMAL_SIMULATION"; nocase; sid:2450005; rev:1;)
